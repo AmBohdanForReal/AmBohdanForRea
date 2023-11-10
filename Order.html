@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oddblox's Graphic Services - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #1f1f1f;
+    }
+
+    .top-bar {
+      background-color: #222;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      color: #8b10dd;
+      font-family: 'Montserrat', sans-serif;
+      padding-left: 10px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-item {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      font-size: 17px;
+      font-family: '𝔸𝕤𝕔𝕚𝕚', 'Montserrat', sans-serif;
+    }
+
+    .menu-item::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #8b10dd;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom left;
+    }
+
+    .menu-item:hover::after {
+      transform: scaleX(1);
+    }
+
+    .menu-item-container {
+      position: relative;
+    }
+
+    .splash {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #222;
+      padding: 10px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease, top 0.3s ease;
+      visibility: hidden;
+      width: 400px;
+    }
+
+    .menu-item-container:hover .splash {
+      opacity: 1;
+      top: calc(100% + 10px);
+      visibility: visible;
+    }
+
+    .centered-square {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #222;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+
+    .centered-square h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+      font-family: '𝕭𝖑𝖔𝖈𝖐𝖇𝖔𝖆𝖗𝖉', 'Montserrat', sans-serif;
+      text-shadow: 0 0 5px #8b10dd;
+    }
+
+    .form-group {
+      margin-top: 20px;
+      width: 300px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      font-family: '𝔽𝕣𝕒𝕜𝕥𝕦𝕣', 'Montserrat', sans-serif;
+      color: #8b10dd;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #201f1e;
+      border-radius: 5px;
+      background-color: #2e2c2c;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      transition: background-color 0.2s ease;
+    }
+
+    .form-group input:hover {
+      background-color: #3a3938;
+    }
+
+    .dropdown {
+      margin-top: 20px;
+      width: 300px;
+    }
+
+    .dropdown label {
+      display: block;
+      font-weight: bold;
+      font-family: '𝕯𝖊𝖛𝖎𝖑𝖍𝖆𝖓𝖉', 'Montserrat', sans-serif;
+      color: #8b10dd;
+    }
+
+    .dropdown select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #2e2c2c;
+      border-radius: 5px;
+      background-color: #2e2c2c;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      transition: background-color 0.2s ease;
+    }
+
+    .dropdown select:hover {
+      background-color: #3a3938;
+    }
+
+    .dropdown-option {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+      font-family: 'Montserrat', sans-serif;
+      transition: color 0.2s ease;
+    }
+
+    .dropdown-option:hover {
+      color: #8b10dd;
+    }
+
+    .dropdown-option img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .order-button {
+      margin-top: 23px;
+      padding: 10px 20px;
+      background-color: #8b10dd;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .order-button:hover {
+        border-color: #8b10dd;
+      }
+  
+
+    .OrderCas {
+      color: #8b10dd;
+    }
+
+    /* Message styles */
+    #message {
+      color: #8b10dd;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #message.show {
+      opacity: 1;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #222;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .Casetwo {
+      color: #8b10dd;
+      font-weight: bold;
+    }
+      .dropdown select:hover {
+        border-color: #8b10dd;
+      }
+      .username1 {
+        color: #8b10dd;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="logo">Oddblox's Graphic Services</div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html" class="menu-item">Home</a></li>
+          <li class="menu-item-container">
+            <a href="#" class="menu-item">Contacts</a>
+            <div class="splash">
+              Want to join our Discord server?<a href="https://discord.gg/ednEmF2vrf" class="username1">Click here</a><br>
+              Roblox Username: <span class="username1">DA_developer1</span><br>
+              Our buissnes email: <span class="username1">Oddblox1@gmail.com</span><br>
+              Want to leave a reviem?<a href="https://discord.com/channels/1167110909244743792/1167111049573572719" class="username1">Click Here</a><br>
+              
+
+            </div>
+          </li>
+          <li><a href="Cases.html" class="menu-item">Services</a></li>
+          <li><a href="Order.html" class="menu-item">Order</a></li>
+           <li><a href="aboutsigma.html" class="menu-item">About us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="centered-square">
+    <form action="https://formsubmit.co/your@email.com" method="POST">
+    <h1 class="OrderCas">Order a Service!</h1>
+    <div class="form-group">
+      <label for="radmir-nik">How can we call you?</label>
+      <input type="text" id="radmir-nik" name="radmir-nik" placeholder="Enter your nickname or username">
+    </div>
+    <div class="form-group">
+      <label for="discord">Email / Discord:</label>
+      <input type="text" id="discord" name="discord" placeholder="Enter your discord: Example#0001">
+    </div>
+    <div class="form-group">
+      <label for="time">Your time-zone:</label>
+      <input type="text" id="time" name="time" placeholder="Enter desired time-zone">
+    </div>
+    <div class="dropdown">
+      <label for="options">Select the service you want to get:</label>
+      <select id="options" name="options">
+        <option value="option1">
+          <img src="image1.jpg" alt="Option 1"> GFX
+        </option>
+        <option value="option2">
+          <img src="image2.jpg" alt="Option 2"> Discord banner
+        </option>
+        <option value="option3">
+          <img src="image3.jpg" alt="Option 3"> Discord PFP
+        </option>
+        <option value="option4">
+          <img src="image4.jpg" alt="Option 4"> Youtube banner
+        </option>
+        <option value="option5">
+          <img src="image5.jpg" alt="Option 5"> Youtube PFP
+        </option>
+        <option value="option6">
+          <img src="image6.jpg" alt="Option 6"> Roblox logo
+        </option>
+        <option value="option7">
+          <img src="image7.jpg" alt="Option 7"> Roblox thumbnail
+        </option>
+      </select>
+    </div>
+    <button class="order-button" id="orderButton" onclick="senMail()">Order</button>
+    <p id="message" style="color: #8b10dd;"></p>
+  </div>
+
+  <script>
+    document.getElementById("orderButton").addEventListener("click", function() {
+      const name = document.getElementById("radmir-nik").value;
+      const contact = document.getElementById("discord").value;
+      const timezone = document.getElementById("time").value;
+      const service = document.getElementById("options").value;
+
+      if (name && contact && timezone && service) {
+        document.getElementById("message").textContent = "Your order will get reviewed by staff soon.";
+        document.getElementById("message").classList.add("show");
+      } else {
+        document.getElementById("message").textContent = "Fill all inputs first.";
+        document.getElementById("message").classList.add("show");
+      }
+    });
+  </script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("1fWflS1qO2JSFqJqH");
+   })();
+</script>
+
+<script>
+  function senMail(){
+    var params = {
+      name: document.getElementById("radmir-nik").value ,
+      email:document.getElementById("discord").value , 
+      timezone:document.getElementById("time").value , 
+      options:document.getElementById("options").value ,
+    } ;
+  }
+
+  const serviceID = "service_i4te7cu";
+  const templateID = "template_5xhasbj"
+
+  emailjs.send(serviceID,templateID,paramas)
+  .then (
+    res =>{
+      document.getElementById("radmir-nik").value = "";
+      document.getElementById("discord").value = "";
+      document.getElementById("time").value = "";
+      document.getElementById("options").value = "";
+      console.log(res);
+      alert("YOur sigma male");
+    }
+  )
+  .catch(err=>console.log(err))
+</script>
+  
+
+  <footer>
+    <p><span class="Casetwo">© 2023 Oddblox's Graphic Services.</span> All rights reserved. | Designed by MakuhaPerduha</a></p>
+  </footer>
+</body>
+
+</html>

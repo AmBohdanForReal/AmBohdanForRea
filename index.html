@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Market - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #1f1f1f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .top-bar {
+      background-color: #222;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      color: #8b10dd;
+      font-family: 'Montserrat', sans-serif;
+      padding-left: 10px; /* Add some left padding to the logo */
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-item {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+    }
+
+    .menu-item::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #8b10dd;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom left;
+    }
+
+    .menu-item:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Splash Window styles */
+    .menu-item-container {
+      position: relative;
+    }
+
+    .splash {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #222;
+      padding: 10px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease, top 0.3s ease;
+      visibility: hidden;
+      width: 400px; /* Adjust the width to make the splash box longer horizontally */
+    }
+
+    .menu-item-container:hover .splash {
+      opacity: 1;
+      top: calc(100% + 10px);
+      visibility: visible;
+    }
+
+    /* Centered Square styles */
+    .centered-square {
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .centered-square h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .centered-square p {
+      font-size: 18px;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 15px;
+    }
+
+    /* Order button styles */
+    .order-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #8b10dd;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .order-button:hover {
+      background-color: #8b10dd;
+    }
+    
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #222;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #8b10dd;
+      text-decoration: none;
+    }
+    .Casetwo{
+      color: #8b10dd;
+      font-weight: bold;
+    }
+    .OrderNowText {
+      font-family: monospace;
+      color: #333;
+      text-underline-position: above;
+      font-weight: bold;
+    }
+
+    .username1 {
+        color: #8b10dd;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="logo">OddBlox's Graphic Services</div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html" class="menu-item">Home</a></li>
+          <li class="menu-item-container">
+            <a href="#" class="menu-item">Contacts</a>
+            <div class="splash">
+              Want to join our Discord server?<a href="https://discord.gg/ednEmF2vrf" class="username1">Click here</a><br>
+              Roblox Username: <span class="username1">DA_developer1</span><br>
+              Our buissnes email: <span class="username1">Oddblox1@gmail.com</span><br>
+              Want to leave a reviem?<a href="https://discord.com/channels/1167110909244743792/1167111049573572719" class="username1">Click Here</a><br>
+              
+
+            </div>
+          </li>
+          <li><a href="Cases.html" class="menu-item">Services</a></li>
+          <li><a href="Order.html" class="menu-item">Order</a></li>
+          <li><a href="aboutsigma.html" class="menu-item">About us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="centered-square">
+    <h1 class="OrderCas">Welcome to OddBlox Digital services</h1>
+    <p>Browse our collection of exciting services and place your order now!</p>
+    <button class="order-button"><a href="Order.html" class="OrderNowText">Order Now</a></button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><span class="Casetwo">© 2023 Case Market.</span> All rights reserved. | Designed by MakuhaPerduha</a></p>
+  </footer>
+
+</body>
+
+</html>

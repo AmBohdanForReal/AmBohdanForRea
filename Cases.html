@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OGC - Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #1f1f1f;
+    }
+
+    .top-bar {
+      background-color: #252525;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      color: #8b10dd;
+      font-family: 'Montserrat', sans-serif;
+      padding-left: 10px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-item {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+    }
+
+    .menu-item::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #8b10dd;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom left;
+    }
+
+    .menu-item:hover::after {
+      transform: scaleX(1);
+    }
+
+    .menu-item-container {
+      position: relative;
+    }
+
+    .splash {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #393939;
+      padding: 10px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease, top 0.3s ease;
+      visibility: hidden;
+      width: 400px;
+    }
+
+    .menu-item-container:hover .splash {
+      opacity: 1;
+      top: calc(100% + 10px);
+      visibility: visible;
+    }
+
+    .goods-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      margin-top: 100px;
+      background-color: #222;
+      color: #fff;
+      margin-right: 30px;
+    }
+
+    .card-image {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .goods-card:hover .card-image img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      padding: 20px;
+      background-color: #252525;
+      text-align: center;
+      color: #fff;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .availability {
+      color: #8b10dd;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .goods-card {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #222;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .Casetwo {
+      color: #8b10dd;
+      font-weight: bold;
+    }
+
+    .textcontact {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+    }
+    .username1 {
+        color: #8b10dd;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="logo">Oddblox's Graphic Services</div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html" class="menu-item">Home</a></li>
+          <li class="menu-item-container">
+            <a href="#" class="menu-item">Contacts</a>
+            <div class="splash">
+              Want to join our Discord server?<a href="https://discord.gg/ednEmF2vrf" class="username1">Click here</a><br>
+              Roblox Username: <span class="username1">DA_developer1</span><br>
+              Our buissnes email: <span class="username1">Oddblox1@gmail.com</span><br>
+              Want to leave a reviem?<a href="https://discord.com/channels/1167110909244743792/1167111049573572719" class="username1">Click Here</a><br>
+              
+
+            </div>
+          </li>
+          <li><a href="Cases.html" class="menu-item">Services</a></li>
+          <li><a href="Order.html" class="menu-item">Order</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="goods-card">
+      <div class="card-image">
+        <img src="case-2.5daaad85.png" alt="Product 1">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Discord Logo</h3>
+        <p class="card-description">Discord Server Logo</p>
+        <p class="availability">150R$-1000R$</p>
+        <p class="availability" style="color: #4CAF50; font-weight: bold;">2-10$ USD</p>
+      </div>
+    </div>
+
+    <div class="goods-card">
+      <div class="card-image">
+        <img src="case-1.4b220c78.png" alt="Dark Deeds">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Discord Banner</h3>
+        <p class="card-description">Banner for discord account / server</p>
+        <p class="availability">150R$-1000R$</p>
+        <p class="availability" style="color: #4CAF50; font-weight: bold;">2-10$ USD</p>
+
+      </div>
+    </div>
+
+    <div class="goods-card">
+      <div class="card-image">
+        <img src="case-3.831078f8.png" alt="Product 3">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title"> Discord PFP</h3>
+        <p class="card-description">The PFP for Discord account</p>
+        <p class="availability">150R$-750R$ </p>
+        <p class="availability" style="color: #4CAF50; font-weight: bold;">2-8$ USD</p>
+
+      </div>
+    </div>
+
+    <div class="goods-card">
+      <div class="card-image">
+        <img src="case-5.c5ff9320.png" alt="Black Gold">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Youtube banner</h3>
+        <p class="card-description">The banner for Youtube channel</p>
+        <p class="availability">150R$-1100R$</p>
+        <p class="availability" style="color: #4CAF50; font-weight: bold;">2-11$ USD</p>
+
+      </div>
+    </div>
+
+    <div class="goods-card">
+      <div class="card-image">
+        <img src="case-0.3908eae4.png" alt="Product 5">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Youtube PFP</h3>
+        <p class="card-description">The PFP for Youtube channel</p>
+        <p class="availability">$65.000</p>
+        <p class="availability" style="color: #4CAF50; font-weight: bold;">2-8$ USD</p>
+      </div>
+    </div>
+
+    <div class="goods-card">
+      <div class="card-image">
+        <img src="case-4.d46a1ded.png" alt="Product 6">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Roblox Logo</h3>
+        <p class="card-description">Just roblox logo</p>
+        <p class="availability">150R$-750R$</p>
+        <p class="availability" style="color: #4CAF50; font-weight: bold;">2-8$ USD</p>
+
+      </div>
+    </div>
+
+    <div class="goods-card">
+      <div class="card-image">
+        <img src="case-6.aeaa0035.png" alt="Product 7">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Roblox thumbnail</h3>
+        <p class="card-description">Just Roblox thumbnail</p>
+        <p class="availability">150R$-1350R$</p>
+        <p class="availability" style="color: #4CAF50; font-weight: bold;">2-15$ USD</p>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><span class="Casetwo">© 2023 Case Market.</span> All rights reserved. | Designed by MakuhaPerduha</a></p>
+  </footer>
+
+</body>
+
+</html>
